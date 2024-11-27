@@ -1,5 +1,6 @@
 #include <unistd.h>
 #include <stdarg.h>
+#include <stdio.h>
 
 void	print_char(char c)
 {
@@ -13,6 +14,17 @@ void	print_string(char *s)
 		write(1, s, 1);
 		s++;
 	}
+}
+
+void print_memory(void *p)
+{
+	char	hex_digits[] = "0123456789abcdef";
+	int	shift;
+	unsigned long address = (unsigned long)p;
+	if (p == NULL)
+		write(1, "nil", 3);
+	shift = sizeof(adress) * 8 - 4
+
 }
 
 void	ftttt_printf(const char *format, ...)
@@ -31,6 +43,9 @@ void	ftttt_printf(const char *format, ...)
 				print_char((char)va_arg(args, int));
 			else if (format[i] == 's')
 				print_string(va_arg(args, char*));
+			else if (format[i] == 'p')
+				print_memory(va_arg(args, void*));
+
 		}
 		else
 			write(1, &format[i], 1);
@@ -42,5 +57,5 @@ void	ftttt_printf(const char *format, ...)
 int main()
 {
 	char *c = "tsthhnnfakyo";
-	ftttt_printf("tstalah %s", c);
+	ftttt_printf("tstalah %s ghjgy", c);
 }
