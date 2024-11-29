@@ -16,22 +16,33 @@ void	print_string(char *s)
 	}
 }
 
-void print_memory(void *p)
+void print_memory(unsigned long mem)
 {
-	char	hex_digits[] = "0123456789abcdef";
-	int	shift;
-	unsigned long address = (unsigned long)p;
-	if (p == NULL)
-		write(1, "nil", 3);
-	shift = sizeof(adress) * 8 - 4
+	char	*hex;
+	char	hex_mem[16];
+	int	i;
 
+	i = 15;
+	hex = "0123456789abcdef";
+	if (mem == 0)
+		write(1, "0x0", 3);
+	hex_mem[i] = '\0';
+	i--;
+	while (mem > 0)
+	{
+		hex_mem[i] = hex[mem % 16];
+		mem = mem / 16;
+		i--;
+	}
+	write(1, "0x", 2);
+	write(1, &hex_mem[i + 1], 15 - i);
 }
 
 void	ftttt_printf(const char *format, ...)
 {
 	va_list	args;
 	int	i;
-
+	
 	i = 0;
 	va_start(args, format);
 	while (format[i])
@@ -44,7 +55,7 @@ void	ftttt_printf(const char *format, ...)
 			else if (format[i] == 's')
 				print_string(va_arg(args, char*));
 			else if (format[i] == 'p')
-				print_memory(va_arg(args, void*));
+				print_memory((unsigned long)va_arg(args, void*));
 
 		}
 		else
@@ -57,5 +68,5 @@ void	ftttt_printf(const char *format, ...)
 int main()
 {
 	char *c = "tsthhnnfakyo";
-	ftttt_printf("tstalah %s ghjgy", c);
+	ftttt_printf("tstalah %p ghjgy\n", (void *)c);
 }
