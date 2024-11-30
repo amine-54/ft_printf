@@ -12,6 +12,4 @@ int main()
 	
 	int k = ft_printf(NULL);
 	ft_printf("%d\n", k);
-	int j = printf(NULL);
-	printf("%d", j);
 }
