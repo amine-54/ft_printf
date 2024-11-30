@@ -1,6 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mmanyani <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/30 09:42:29 by mmanyani          #+#    #+#             */
+/*   Updated: 2024/11/30 10:01:21 by mmanyani         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 #include <stdarg.h>
 #include <stdio.h>
+
+void	ft_putnbr(int n);
 
 void	print_char(char c)
 {
@@ -56,6 +70,9 @@ void	ftttt_printf(const char *format, ...)
 				print_string(va_arg(args, char*));
 			else if (format[i] == 'p')
 				print_memory((unsigned long)va_arg(args, void*));
+			else if (format[i] == 'd' || format[i] == 'i')
+				ft_putnbr(va_arg(args, int));
+
 
 		}
 		else
@@ -67,6 +84,6 @@ void	ftttt_printf(const char *format, ...)
 
 int main()
 {
-	char *c = "tsthhnnfakyo";
-	ftttt_printf("tstalah %p ghjgy\n", (void *)c);
+	int c = 1578132;
+	ftttt_printf("tstalah %i ghjgy\n", c);
 }
