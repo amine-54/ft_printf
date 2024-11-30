@@ -9,7 +9,9 @@ int main()
 	int n = printf("the number is %x\n", tst);
 	printf("Number of characters printed: %d\n", n);
 	*/
-
+	
+	int k = ft_printf(NULL);
+	ft_printf("%d\n", k);
 	int j = printf(NULL);
 	printf("%d", j);
 }
