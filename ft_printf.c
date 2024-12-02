@@ -6,7 +6,7 @@
 /*   By: mmanyani <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/30 09:42:29 by mmanyani          #+#    #+#             */
-/*   Updated: 2024/12/02 13:55:24 by mmanyani         ###   ########.fr       */
+/*   Updated: 2024/12/02 14:22:37 by mmanyani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ int	ft_printf(const char *format, ...)
 	int		total;
 	va_list	args;
 
+	if (format == NULL)
+		return (NULL);
 	total = 0;
 	i = 0;
 	va_start(args, format);
