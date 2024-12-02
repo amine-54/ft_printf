@@ -6,7 +6,7 @@
 /*   By: mmanyani <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 14:36:42 by mmanyani          #+#    #+#             */
-/*   Updated: 2024/12/02 18:20:24 by mmanyani         ###   ########.fr       */
+/*   Updated: 2024/12/02 18:39:36 by mmanyani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,8 +76,10 @@ int main()
 
 	
 	int a = 48845;
-	ft_printf("%d\n", a);
-	ft_printf("%d\n", a);
-	ft_printf("%d\n", a);
+	close(1);
+	int n = ft_printf("%d\n", a);
+	if (n == -1)
+		fprintf(stderr, "l7wa");
+
 
 }

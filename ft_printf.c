@@ -6,7 +6,7 @@
 /*   By: mmanyani <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/30 09:42:29 by mmanyani          #+#    #+#             */
-/*   Updated: 2024/12/02 18:32:43 by mmanyani         ###   ########.fr       */
+/*   Updated: 2024/12/02 18:53:42 by mmanyani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	looping(const char *format, va_list args, int *total)
 	{
 		if (format[i] == '%')
 		{
-			i++;
+			i++;	
 			if (format[i] == '\0')
 				return (-1);
 			if (format[i] != '\0')
