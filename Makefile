@@ -1,11 +1,11 @@
 NAME = libftprintf.a
 
 SRC = ft_printf.c ft_putnbr.c print_char.c print_hex.c print_memory.c \
-      print_string.c print_unsigned.c
+      print_string.c print_unsigned.c formats.c
 
 OBJ = ${SRC:.c=.o}
 
-#CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror
 
 CC = cc
 

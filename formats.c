@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   format.c                                           :+:      :+:    :+:   */
+/*   formats.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmanyani <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 13:12:55 by mmanyani          #+#    #+#             */
-/*   Updated: 2024/12/02 13:26:32 by mmanyani         ###   ########.fr       */
+/*   Updated: 2024/12/02 13:44:48 by mmanyani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	format(int *total, int *i, va_list args, const char form)
+void	format_choice(int *total, va_list args, const char form)
 {
 	if (form == 'c')
 		*total = *total + print_char((char)va_arg(args, int));
@@ -25,7 +25,7 @@ void	format(int *total, int *i, va_list args, const char form)
 	else if (form == 'u')
 		*total = *total + print_unsigned(va_arg(args, unsigned int));
 	else if (form == 'x' || form == 'X')
-		*total = *total + print_hex(va_arg(args, unsigned int), format[i]);
+		*total = *total + print_hex(va_arg(args, unsigned int), form);
 	else if (form == '%')
-		*total = *total + print_char(format[i]);
+		*total = *total + print_char(form);
 }
