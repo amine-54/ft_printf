@@ -6,7 +6,7 @@
 /*   By: mmanyani <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/30 13:59:14 by mmanyani          #+#    #+#             */
-/*   Updated: 2024/11/30 15:14:40 by mmanyani         ###   ########.fr       */
+/*   Updated: 2024/12/02 16:20:53 by mmanyani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ int	print_hex(unsigned int n , char c)
 		return (0);
 	if (n >= 16)
 		count = count + print_hex(n / 16, c);
-	write(1, &hex[n % 16], 1);
+	if (write(1, &hex[n % 16], 1) == -1)
+		return (-1);
 	count++;
 	return (count);
 }

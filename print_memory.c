@@ -6,7 +6,7 @@
 /*   By: mmanyani <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/30 13:34:47 by mmanyani          #+#    #+#             */
-/*   Updated: 2024/11/30 14:48:12 by mmanyani         ###   ########.fr       */
+/*   Updated: 2024/12/02 16:19:28 by mmanyani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,11 @@ int	print_memory(unsigned long mem)
 		mem = mem / 16;
 		i--;
 	}
-	write(1, "0x", 2);
+	if (write(1, "0x", 2) == -1)
+		return (-1);
 	count = count + 2;
-	write(1, &hex_mem[i + 1], 16 - i - 1);
+	if (write(1, &hex_mem[i + 1], 16 - i - 1) == -1)
+		return (-1);
 	count = count + 16 - i - 1;
 	return (count);
 }

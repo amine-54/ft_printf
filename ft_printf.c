@@ -6,7 +6,7 @@
 /*   By: mmanyani <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/30 09:42:29 by mmanyani          #+#    #+#             */
-/*   Updated: 2024/12/02 14:22:37 by mmanyani         ###   ########.fr       */
+/*   Updated: 2024/12/02 16:47:30 by mmanyani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_printf(const char *format, ...)
 	va_list	args;
 
 	if (format == NULL)
-		return (NULL);
+		return (-1);
 	total = 0;
 	i = 0;
 	va_start(args, format);
@@ -28,12 +28,24 @@ int	ft_printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			i++;
+			if (format[i] == '\0')
+				return (-1);
 			if (format[i] != '\0')
-				format_choice(&total, args, format[i]);
+			{
+				if(format_choice(&total, args, format[i]) == -1)
+				{
+					va_end(args);
+					return (-1);
+				}
+			}
 		}
 		else
 		{
-			write(1, &format[i], 1);
+			if (write(1, &format[i], 1) == -1)
+			{
+				va_end(args);
+				return(-1);
+			}
 			total++;
 		}
 		i++;

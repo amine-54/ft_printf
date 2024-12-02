@@ -6,7 +6,7 @@
 /*   By: mmanyani <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/30 13:33:28 by mmanyani          #+#    #+#             */
-/*   Updated: 2024/11/30 14:40:18 by mmanyani         ###   ########.fr       */
+/*   Updated: 2024/12/02 16:16:52 by mmanyani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,12 @@ int	print_string(char *s)
 	int	count;
 
 	count = 0;
+	if (s == NULL)
+		s = "(null)";
 	while (*s)
 	{
-		write(1, s, 1);
+		if (write(1, s, 1) == -1)
+			return (-1);
 		count++;
 		s++;
 	}
