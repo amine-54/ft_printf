@@ -6,7 +6,7 @@
 /*   By: mmanyani <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/30 09:42:29 by mmanyani          #+#    #+#             */
-/*   Updated: 2024/11/30 15:06:08 by mmanyani         ###   ########.fr       */
+/*   Updated: 2024/12/02 13:23:32 by mmanyani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ int	ft_printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			i++;
-			if (format[i] == 'c')
+			format(&total, &i, args, format[i]);
+			/*if (format[i] == 'c')
 				total = total + print_char((char)va_arg(args, int));
 			else if (format[i] == 's')
 				total = total + print_string(va_arg(args, char*));
@@ -40,6 +41,7 @@ int	ft_printf(const char *format, ...)
 				total = total + print_hex(va_arg(args, unsigned int), format[i]);
 			else if (format[i] == '%')
 				total = total + print_char(format[i]);
+			*/
 		}
 		else
 		{
