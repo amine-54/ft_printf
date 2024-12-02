@@ -6,12 +6,13 @@
 /*   By: mmanyani <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 14:36:42 by mmanyani          #+#    #+#             */
-/*   Updated: 2024/12/02 16:47:43 by mmanyani         ###   ########.fr       */
+/*   Updated: 2024/12/02 18:20:24 by mmanyani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include "string.h"
+#include "limits.h"
 
 int main()
 {
@@ -55,6 +56,28 @@ int main()
 	ft_printf("%d\n", n);
 	*/
 
-	int n = ft_printf("%");
-	ft_printf("%d", n);
+	/*
+	int a = -2147483648;
+	int b = 0;
+	printf("%d %d\n", a, b);
+	ft_printf("%d %d", a, b);
+	*/
+	
+
+	/*
+	int a = 15879;
+	char c = 't';
+	char *tst = "tst alah hh";
+	int *aa = &a;
+
+	printf("hado random chars %d  rdm chars mora int %c chars bo7do hh  %s %p pchakh 3la hexa\n", a, c, tst, aa); 
+	ft_printf("hado random chars %d  rdm chars mora int %c chars bo7do hh  %s %p pchakh 3la hexa\n", a, c, tst, aa); 
+	*/
+
+	
+	int a = 48845;
+	ft_printf("%d\n", a);
+	ft_printf("%d\n", a);
+	ft_printf("%d\n", a);
+
 }

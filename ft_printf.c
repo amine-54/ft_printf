@@ -6,11 +6,40 @@
 /*   By: mmanyani <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/30 09:42:29 by mmanyani          #+#    #+#             */
-/*   Updated: 2024/12/02 16:47:30 by mmanyani         ###   ########.fr       */
+/*   Updated: 2024/12/02 18:32:43 by mmanyani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+int	looping(const char *format, va_list args, int *total)
+{
+	int	i;
+
+	i = 0;
+	while (format[i])
+	{
+		if (format[i] == '%')
+		{
+			i++;
+			if (format[i] == '\0')
+				return (-1);
+			if (format[i] != '\0')
+			{
+				if (format_choice(total, args, format[i]) == -1)
+					return (-1);
+			}
+		}
+		else
+		{
+			if (write(1, &format[i], 1) == -1)
+				return (-1);
+			(*total)++;
+		}
+		i++;
+	}
+	return (*total);
+}
 
 int	ft_printf(const char *format, ...)
 {
@@ -23,33 +52,10 @@ int	ft_printf(const char *format, ...)
 	total = 0;
 	i = 0;
 	va_start(args, format);
-	while (format[i])
+	if (looping(format, args, &total) == -1)
 	{
-		if (format[i] == '%')
-		{
-			i++;
-			if (format[i] == '\0')
-				return (-1);
-			if (format[i] != '\0')
-			{
-				if(format_choice(&total, args, format[i]) == -1)
-				{
-					va_end(args);
-					return (-1);
-				}
-			}
-		}
-		else
-		{
-			if (write(1, &format[i], 1) == -1)
-			{
-				va_end(args);
-				return(-1);
-			}
-			total++;
-		}
-		i++;
+		va_end(args);
+		return (-1);
 	}
-	va_end(args);
 	return (total);
 }

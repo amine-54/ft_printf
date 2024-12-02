@@ -6,7 +6,7 @@
 /*   By: mmanyani <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/30 09:42:21 by mmanyani          #+#    #+#             */
-/*   Updated: 2024/11/30 14:38:41 by mmanyani         ###   ########.fr       */
+/*   Updated: 2024/12/02 17:31:47 by mmanyani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,8 @@ int	ft_putnbr(int n)
 	if (n >= 10)
 		count = count + ft_putnbr(n / 10);
 	char m = n % 10 + 48;
-	write(1, &m, 1);
+	if (write(1, &m, 1) == -1)
+		return (-1);
 	count++;
 	return (count);
 }
