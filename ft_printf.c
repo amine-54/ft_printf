@@ -43,14 +43,14 @@ int	looping(const char *format, va_list args, int *total)
 
 int	ft_printf(const char *format, ...)
 {
-	int		i;
+	//int		i;
 	int		total;
 	va_list	args;
 
 	if (format == NULL)
 		return (-1);
 	total = 0;
-	i = 0;
+	//i = 0;
 	va_start(args, format);
 	if (looping(format, args, &total) == -1)
 	{
