@@ -38,6 +38,7 @@ int	print_memory(unsigned long long mem)
 	}
 	while (mem >= 16)
 		print_memory(mem / 16);
+	//raj3 recursivity, o gad dkchi li knti ktbti 9bel
 	write(1, "0x", 2);
 	while (mem > 0)
 	{
