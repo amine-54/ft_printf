@@ -6,7 +6,7 @@
 /*   By: mmanyani <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 14:36:42 by mmanyani          #+#    #+#             */
-/*   Updated: 2024/12/02 18:39:36 by mmanyani         ###   ########.fr       */
+/*   Updated: 2024/12/03 14:35:04 by mmanyani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,12 +74,16 @@ int main()
 	ft_printf("hado random chars %d  rdm chars mora int %c chars bo7do hh  %s %p pchakh 3la hexa\n", a, c, tst, aa); 
 	*/
 
-	
+	/*
 	int a = 48845;
 	close(1);
 	int n = ft_printf("%d\n", a);
 	if (n == -1)
 		fprintf(stderr, "l7wa");
+	*/
+
+	int m = ft_printf("%d", -10);
+	ft_printf("\n%d", m);
 
 
 }
