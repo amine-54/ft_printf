@@ -6,7 +6,6 @@ SRC = ft_printf.c ft_putnbr.c print_char.c print_hex.c print_memory.c \
 OBJ = ${SRC:.c=.o}
 
 CFLAGS = -Wall -Wextra -Werror
-
 CC = cc
 
 all: $(NAME)
