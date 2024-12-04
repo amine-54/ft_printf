@@ -6,7 +6,7 @@
 /*   By: mmanyani <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/30 14:31:47 by mmanyani          #+#    #+#             */
-/*   Updated: 2024/12/04 16:06:18 by mmanyani         ###   ########.fr       */
+/*   Updated: 2024/12/04 17:20:22 by mmanyani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ int	ft_printf(const char *format, ...);
 int	ft_putnbr(int n);
 int	print_char(char c);
 int	print_memory(unsigned long mem);
-int	print_string(char *s);
+int	print_string(const char *s);
 int	print_unsigned(unsigned int n);
 int	print_hex(unsigned int n, char c);
-int	format_choice(int *total, va_list args, const char form);
+int	format_choice(int *total, va_list args, const char *form);
 
 #endif
