@@ -11,7 +11,7 @@ int	print_string(char *s)
 {
 	int	count;
 
-	count = 0
+	count = 0;
 	while (s[i])
 	{
 		write(1, s, 1);
@@ -20,6 +20,7 @@ int	print_string(char *s)
 	}
 	return (count);
 }
+
 void	recursive_call_mem(unsigned long long mem, int *count)
 {
 	if (mem >= 16)
@@ -50,6 +51,7 @@ int	print_memory(unsigned long long mem)
 	return (printed);
 
 }
+
 int	ft_printf(const char *format, ...)
 {
 	int	i;
@@ -72,3 +74,7 @@ int	ft_printf(const char *format, ...)
 				total += print_string(va_arg(args, char*));
 			else if (format[i] == 'p')
 				total += print_memory((unsigned long long)va_arg(args, void*));
+			else if (format[i] == 'd' || format[i] == 'i')
+				ft_putnbr(va_arg(args, int));
+
+
