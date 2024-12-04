@@ -20,34 +20,35 @@ int	print_string(char *s)
 	}
 	return (count);
 }
+void	recursive_call_mem(unsigned long long mem, int *count)
+{
+	if (mem >= 16)
+	{
+		recursive_call_mem(mem / 16, count);
+		recursive_call_mem(mem % 16, count);
+	}
+	else
+	{
+		if (mem < 10)
+			*count += print_char(mem + '0');
+		else
+			*count += print_char(mem - 10 + 'a');
+	}
+}
+
 
 int	print_memory(unsigned long long mem)
 {
-	char *hex;
-	char hex_mem[17];
-	int	i;
-	int	count;
+	int	printed;
 
-	i = 0;
-	count = 0;
-	hex = "0123456789abcdef";
+	printed = 0;
+	printed += write(1, "0x", 2);
 	if (mem == 0)
-	{
-		write(1, "0x0", 3);
-		return (3);
-	}
-	while (mem >= 16)
-		print_memory(mem / 16);
-	//raj3 recursivity, o gad dkchi li knti ktbti 9bel
-	write(1, "0x", 2);
-	while (mem > 0)
-	{
-		hex_mem[i] = hex[mem % 16];
-		i++;
-		mem = mem / 16;
-	}
-	write(1, hex_mem, 16 - i - 1);
-	return (count);
+		printed += write(1, "0", 1);
+	else
+		recursive_call_mem(mem, &printed);
+	return (printed);
+
 }
 int	ft_printf(const char *format, ...)
 {

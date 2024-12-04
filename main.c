@@ -6,7 +6,7 @@
 /*   By: mmanyani <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 14:36:42 by mmanyani          #+#    #+#             */
-/*   Updated: 2024/12/03 14:35:04 by mmanyani         ###   ########.fr       */
+/*   Updated: 2024/12/04 13:42:43 by mmanyani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,9 +81,25 @@ int main()
 	if (n == -1)
 		fprintf(stderr, "l7wa");
 	*/
-
+	
+	/*
 	int m = ft_printf("%d", -10);
 	ft_printf("\n%d", m);
+	*/
 
+	/*
+	int *p = NULL;
+	int n = printf("%p\n", p);             original katprinti (nil) ????
+	printf("%d\n", n);
+	int m = ft_printf("%p\n", p);
+	ft_printf("%d\n", m);
+	*/
+
+	int a = 5;
+	int *p = &a;
+	int m = printf("%p\n", p);
+	printf("%d\n", m);
+	int n = ft_printf("%p\n", p);
+	ft_printf("%d\n", n);
 
 }
