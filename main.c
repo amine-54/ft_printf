@@ -6,7 +6,7 @@
 /*   By: mmanyani <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 14:36:42 by mmanyani          #+#    #+#             */
-/*   Updated: 2024/12/04 15:28:01 by mmanyani         ###   ########.fr       */
+/*   Updated: 2024/12/04 16:04:09 by mmanyani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,10 +114,9 @@ int main()
 	ft_printf("%d\n", n);
 	*/
 
-	/*
-	printf("%T\n");
-	ft_printf("%T");     mamhandlihach !!!
-	*/
+
+	printf("%Thhhh\n");
+	ft_printf("%Thhhh");
 
 	
 

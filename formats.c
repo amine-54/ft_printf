@@ -6,7 +6,7 @@
 /*   By: mmanyani <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 13:12:55 by mmanyani          #+#    #+#             */
-/*   Updated: 2024/12/02 16:21:03 by mmanyani         ###   ########.fr       */
+/*   Updated: 2024/12/04 16:05:57 by mmanyani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,11 @@ int	format_choice(int *total, va_list args, const char form)
 		result = print_hex(va_arg(args, unsigned int), form);
 	else if (form == '%')
 		result = print_char(form);
+	/*else
+	{
+		result = print_char('%');
+		result += print_string(form);
+	}*/
 	if (result == -1)
 		return (-1);
 	*total = *total + result;
