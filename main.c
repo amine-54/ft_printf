@@ -122,4 +122,9 @@ int main()
 	ft_printf("%d\n", m);
 	*/
 
+	int n = printf("%x\n", -1);
+	printf("%d\n", n);
+	int m = ft_printf("%x\n", -1);
+	ft_printf("%d\n", m);
+
 }

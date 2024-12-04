@@ -37,7 +37,6 @@ void	recursive_call_mem(unsigned long long mem, int *count)
 	}
 }
 
-
 int	print_memory(unsigned long long mem)
 {
 	int	printed;
@@ -49,8 +48,19 @@ int	print_memory(unsigned long long mem)
 	else
 		recursive_call_mem(mem, &printed);
 	return (printed);
-
 }
+
+int	print_unsigned(unsigned int n)
+{
+	int	count;
+
+	count = 0;
+	if (n >= 10)
+		count += print_unsigned(n / 10);
+	count += print_char(n % 10 + 48);
+	return (count);
+}
+
 
 int	ft_printf(const char *format, ...)
 {
@@ -76,5 +86,5 @@ int	ft_printf(const char *format, ...)
 				total += print_memory((unsigned long long)va_arg(args, void*));
 			else if (format[i] == 'd' || format[i] == 'i')
 				ft_putnbr(va_arg(args, int));
-			else
-			{
+			else if (format[i] == 'u')
+				print_unsigned(va_arg(args, unsigned int))

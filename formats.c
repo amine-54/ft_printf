@@ -39,5 +39,5 @@ int	format_choice(int *total, va_list args, const char form)
 	if (result == -1)
 		return (-1);
 	*total = *total + result;
-	return(result);
+	return (result);
 }
