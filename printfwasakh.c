@@ -110,6 +110,11 @@ int	ftttt_printf(const char *format, ...)
 				total = total + print_hex(va_arg(args, unsigned int), format[i]);
 			else if (format[i] == '%')
 				total = total + print_char(format[i]);
+			else
+			{
+				total += print_char('%');
+				total += print_char(format[i]);
+			}
 
 		}
 		else
@@ -125,9 +130,16 @@ int	ftttt_printf(const char *format, ...)
 
 int main()
 {
+	/*
 	int m = ftttt_printf("the number is %d\n", 42);
 	ftttt_printf("Number of characthers printed: %d\n", m);
 	int n = printf("the number is %d\n", 42);
 	printf("Number of characters printed: %d\n", n);
+	*/
+
+	int n = printf("%T\n");
+	printf("%d\n", n);
+	int m = ftttt_printf("%T");
+	printf("%d\n", m);
 }
 

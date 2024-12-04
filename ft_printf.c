@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-int	looping(const char *format, va_list args, int *total)
+static int	looping(const char *format, va_list args, int *total)
 {
 	int	i;
 
@@ -21,12 +21,12 @@ int	looping(const char *format, va_list args, int *total)
 	{
 		if (format[i] == '%')
 		{
-			//i++;	
-			if (format[i + 1] == '\0')
+			i++;	
+			if (format[i] == '\0')
 				return (-1);
-			if (format[i + 1] != '\0')
+			if (format[i] != '\0')
 			{
-				if (format_choice(total, args, &format[i]) == -1)
+				if (format_choice(total, args, format[i]) == -1)
 					return (-1);
 			}
 		}

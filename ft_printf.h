@@ -24,6 +24,6 @@ int	print_memory(unsigned long mem);
 int	print_string(const char *s);
 int	print_unsigned(unsigned int n);
 int	print_hex(unsigned int n, char c);
-int	format_choice(int *total, va_list args, const char *form);
+int	format_choice(int *total, va_list args, const char form);
 
 #endif

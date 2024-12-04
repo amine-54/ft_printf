@@ -113,11 +113,13 @@ int main()
 	int n = ft_printf("%d %d\n", a, b);
 	ft_printf("%d\n", n);
 	*/
-
-
-	printf("%Thhhh\n");
-	ft_printf("%Thhhh");
-
 	
+
+	/*
+	int n = printf("%Thhhh\n");
+	printf("%d\n", n);
+	int m = ft_printf("%Thhhh\n");
+	ft_printf("%d\n", m);
+	*/
 
 }

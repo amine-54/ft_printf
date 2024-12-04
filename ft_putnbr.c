@@ -35,6 +35,7 @@ int	ft_putnbr(int n)
 	if (n >= 10)
 		count = count + ft_putnbr(n / 10);
 	count += print_char(n % 10 + 48);
+	//char m = n % 10 + 48;
 	//if (write(1, &m, 1) == -1)
 		//return (-1);
 	//count++;

@@ -12,31 +12,30 @@
 
 #include "ft_printf.h"
 
-int	format_choice(int *total, va_list args, const char *form)
+int	format_choice(int *total, va_list args, const char form)
 {
 	int	result;
 
 	result = 0;
-	if (*(form + 1) == 'c')
+	if (form == 'c')
 		result = print_char((char)va_arg(args, int));
-	else if (*(form + 1) == 's')
+	else if (form == 's')
 		result = print_string(va_arg(args, char*));
-	else if (*(form + 1)== 'p')
+	else if (form== 'p')
 		result = print_memory((unsigned long)va_arg(args, void*));
-	else if (*(form + 1) == 'd' || *(form + 1) == 'i')
+	else if (form == 'd' || form == 'i')
 		result = ft_putnbr(va_arg(args, int));
-	else if (*(form + 1) == 'u')
+	else if (form == 'u')
 		result = print_unsigned(va_arg(args, unsigned int));
-	else if (*(form + 1) == 'x' || *(form + 1) == 'X')
-		result = print_hex(va_arg(args, unsigned int), *(form + 1));
-	else if (*(form + 1) == '%')
-		result = print_char(*(form + 1));
-	/*else
+	else if (form == 'x' || form == 'X')
+		result = print_hex(va_arg(args, unsigned int), form);
+	else if (form == '%')
+		result = print_char(form);
+	else
 	{
 		result = print_char('%');
-		result += print_string(form + 1);
+		result += print_char(form);
 	}
-	*/
 	if (result == -1)
 		return (-1);
 	*total = *total + result;
