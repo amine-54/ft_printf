@@ -76,5 +76,5 @@ int	ft_printf(const char *format, ...)
 				total += print_memory((unsigned long long)va_arg(args, void*));
 			else if (format[i] == 'd' || format[i] == 'i')
 				ft_putnbr(va_arg(args, int));
-
-
+			else
+			{
