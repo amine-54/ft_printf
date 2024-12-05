@@ -6,7 +6,7 @@
 /*   By: mmanyani <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 14:36:42 by mmanyani          #+#    #+#             */
-/*   Updated: 2024/12/05 13:38:08 by mmanyani         ###   ########.fr       */
+/*   Updated: 2024/12/05 14:27:14 by mmanyani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -140,11 +140,30 @@ int main()
 	fprintf(stderr, "%d\n", m);       tf
 	*/
 
+	/*
 	close(1);
 	int n = printf("grorgr\n");
 	int m = ft_printf("grorgr\n");
 	fprintf(stderr, "%d\n", n);
 	fprintf(stderr, "%d\n", m);
+	*/
+
+	/*	
+	int a =7895;
+	int *p = &a;
+	int n = printf("%p hh tst hh kak joj mrat %p %p nn\n", p, p, p);
+	printf("%d\n", n);
+	int m = ft_printf("%p hh tst hh hak joj mrat %p %p nn\n", p, p, p);
+	ft_printf("%d\n", m);
+	*/
+	
+
+	//int *p = NULL;
+	
+	int m = printf("%p", NULL);
+	printf("%d\n", m);
+	int n = ft_printf("%p", NULL);
+	ft_printf("%d\n", n);
 
 
 }
