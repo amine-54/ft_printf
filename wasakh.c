@@ -61,6 +61,18 @@ int	print_unsigned(unsigned int n)
 	return (count);
 }
 
+int	print_hexa(unsigned int n)
+{
+	int	count;
+	char	*hex;
+	
+	hex = "0123456789abcdef";
+	count = 0;
+	if (n >= 16)
+		count += print_hexa(n / 16);
+	count += print_char(hex[n % 16]);
+	return (count);
+}
 
 int	ft_printf(const char *format, ...)
 {
@@ -87,4 +99,5 @@ int	ft_printf(const char *format, ...)
 			else if (format[i] == 'd' || format[i] == 'i')
 				ft_putnbr(va_arg(args, int));
 			else if (format[i] == 'u')
-				print_unsigned(va_arg(args, unsigned int))
+				print_unsigned(va_arg(args, unsigned int));
+			else if (format[i] == 'x')
