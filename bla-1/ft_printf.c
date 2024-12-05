@@ -9,7 +9,14 @@ int	looping(const char form, va_list args)
 		result += print_string(va_arg(args, char *));
 	else if (form == 'p')
 		result += print_memory((unsigned long)(va_arg(args, void *)));
-	else if (form
+	else if (form == 'd' || form == 'i')
+		result += print_decimal(va_arg(args, int));
+	else if (form == 'u')
+		result += print_unsigned(va_arg(args, unsigned int));
+	else if
+
+
+
 int	ft_printf(const char *format, ...)
 {
 	int	i;
