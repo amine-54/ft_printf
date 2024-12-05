@@ -1,7 +1,9 @@
+#include "ft_printf.h"
+
 static void	recursive_mem(unsigned long mem, int *count)
 {
 	if (mem >= 16)
-		recursive_mem(mem / 16);
+		recursive_mem(mem / 16, count);
 	if (mem % 16 < 10)
 		*count += print_char(mem % 16 + '0');
 	else

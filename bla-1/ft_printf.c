@@ -1,10 +1,12 @@
-int	looping(const char form, va_list args)
+#include "ft_printf.h"
+
+int	format_choice(const char form, va_list args)
 {
 	int result;
 
 	result = 0;
 	if (form == 'c')
-		result += print_char(va_arg(args, char));
+		result += print_char((char)va_arg(args, int));
 	else if (form == 's')
 		result += print_string(va_arg(args, char *));
 	else if (form == 'p')
@@ -13,9 +15,14 @@ int	looping(const char form, va_list args)
 		result += print_decimal(va_arg(args, int));
 	else if (form == 'u')
 		result += print_unsigned(va_arg(args, unsigned int));
-	else if
-
-
+	else if (form == 'x' || form == 'X')
+		result += print_hexa(va_arg(args, unsigned int), form);
+	else if (form == '%')
+		result += print_char(form);
+	else
+		result += print_char('%') + print_char(form);
+	return (result);
+}
 
 int	ft_printf(const char *format, ...)
 {
@@ -26,10 +33,19 @@ int	ft_printf(const char *format, ...)
 	i = 0;
 	total = 0;
 	va_start(args, format);
-	while(format[i])
+	while (format[i])
 	{
 		if (format[i] == '%')
 		{
 			i++;
-			total += looping(format[i], args)
-
+			if (format[i] == '\0')
+				return (-1);
+			if (format[i] != '\0')
+				total += format_choice(format[i], args);
+		}
+		else
+			total += print_char(format[i]);
+		i++;
+	}
+	return (total);
+}
