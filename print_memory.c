@@ -6,7 +6,7 @@
 /*   By: mmanyani <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/30 13:34:47 by mmanyani          #+#    #+#             */
-/*   Updated: 2024/12/05 14:29:42 by mmanyani         ###   ########.fr       */
+/*   Updated: 2024/12/06 14:07:39 by mmanyani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,22 +17,11 @@ static	void	recursive_call_mem(unsigned long mem, int *count)
 	if (mem >= 16)
 	{
 		recursive_call_mem(mem / 16, count);
-	//	recursive_call_mem(mem % 16, count);
 	}
 	if (mem % 16 < 10)
 		*count += print_char(mem % 16 + '0');
 	else
 		*count += print_char(mem % 16 - 10 + 'a');
-
-	/*
-	else
-	{
-		if (mem < 10)
-			*count += print_char(mem + '0');
-		else
-			*count += print_char(mem - 10 + 'a');
-	}
-	*/
 }
 
 int	print_memory(unsigned long mem)

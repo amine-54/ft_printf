@@ -6,7 +6,7 @@
 /*   By: mmanyani <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 14:36:42 by mmanyani          #+#    #+#             */
-/*   Updated: 2024/12/05 16:19:57 by mmanyani         ###   ########.fr       */
+/*   Updated: 2024/12/06 14:29:00 by mmanyani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -148,14 +148,14 @@ int main()
 	fprintf(stderr, "%d\n", m);
 	*/
 
-
-		
+	/*	
 	int a =7895;
 	int *p = &a;
 	int n = printf("%p hh tst hh kak joj mrat %p %p nn\n", p, p, p);
 	printf("%d\n", n);
 	int m = ft_printf("%p hh tst hh hak joj mrat %p %p nn\n", p, p, p);
 	ft_printf("%d\n", m);
+	*/
 	
 	
 
@@ -182,6 +182,9 @@ int main()
 	ft_printf("%d\n", m);
 	*/
 
-
-
+	char *c = "tst";
+        int m = printf("%d %c %s %p ", -2147, 'c', c, c);
+        printf("%d\n", m);
+        int n = ft_printf("%d %c %s %p ", -2147, 'c', c, c);
+        ft_printf("%d\n", n);
 }
