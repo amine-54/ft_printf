@@ -6,7 +6,7 @@
 /*   By: mmanyani <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 14:36:42 by mmanyani          #+#    #+#             */
-/*   Updated: 2024/12/06 14:29:00 by mmanyani         ###   ########.fr       */
+/*   Updated: 2024/12/06 15:46:35 by mmanyani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -183,8 +183,8 @@ int main()
 	*/
 
 	char *c = "tst";
-        int m = printf("%d %c %s %p ", -2147, 'c', c, c);
+        int m = printf("%d %q %T %p ", -2147, 'c', c, c);       //jreb hadi f other repos . seraph
         printf("%d\n", m);
-        int n = ft_printf("%d %c %s %p ", -2147, 'c', c, c);
+        int n = ft_printf("%d %q %T %p ", -2147, 'c', c, c);
         ft_printf("%d\n", n);
 }
