@@ -6,7 +6,7 @@
 /*   By: mmanyani <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/30 14:31:47 by mmanyani          #+#    #+#             */
-/*   Updated: 2024/12/04 17:20:22 by mmanyani         ###   ########.fr       */
+/*   Updated: 2024/12/06 14:40:14 by mmanyani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 # define FT_PRINTF_H
 
 # include <unistd.h>
-#include <stdio.h>
-#include <stdarg.h>
+# include <stdio.h>
+# include <stdarg.h>
 
 int	ft_printf(const char *format, ...);
 int	ft_putnbr(int n);

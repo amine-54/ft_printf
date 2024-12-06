@@ -6,7 +6,7 @@
 /*   By: mmanyani <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 13:12:55 by mmanyani          #+#    #+#             */
-/*   Updated: 2024/12/05 16:19:17 by mmanyani         ###   ########.fr       */
+/*   Updated: 2024/12/06 15:01:45 by mmanyani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,4 +45,3 @@ int	format_choice(int *total, va_list args, const char form)
 	*total = *total + result;
 	return (result);
 }
-// 3lach mandirch void f return dyal func ?

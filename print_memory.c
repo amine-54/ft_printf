@@ -6,7 +6,7 @@
 /*   By: mmanyani <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/30 13:34:47 by mmanyani          #+#    #+#             */
-/*   Updated: 2024/12/06 14:07:39 by mmanyani         ###   ########.fr       */
+/*   Updated: 2024/12/06 14:39:23 by mmanyani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	print_memory(unsigned long mem)
 	int	printed;
 
 	printed = 0;
-	if (mem == 0)  //in C, a NULL pointer is defined as the integer value 0
+	if (mem == 0)
 		printed += print_string("(nil)");
 	else
 	{
