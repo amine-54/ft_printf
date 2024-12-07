@@ -6,7 +6,7 @@
 /*   By: mmanyani <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 13:12:55 by mmanyani          #+#    #+#             */
-/*   Updated: 2024/12/06 15:01:45 by mmanyani         ###   ########.fr       */
+/*   Updated: 2024/12/07 23:25:59 by mmanyani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,6 @@
 
 static int	format_handle(va_list args, const char form)
 {
-	int	result;
-
-	result = 0;
 	if (form == 'c')
 		return (print_char((char)va_arg(args, int)));
 	else if (form == 's')

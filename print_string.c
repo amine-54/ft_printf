@@ -6,13 +6,13 @@
 /*   By: mmanyani <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/30 13:33:28 by mmanyani          #+#    #+#             */
-/*   Updated: 2024/12/06 14:53:53 by mmanyani         ###   ########.fr       */
+/*   Updated: 2024/12/07 23:41:04 by mmanyani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	print_string(const char *s)
+int	print_string(char *s)
 {
 	int	count;
 

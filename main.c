@@ -6,7 +6,7 @@
 /*   By: mmanyani <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 14:36:42 by mmanyani          #+#    #+#             */
-/*   Updated: 2024/12/06 17:19:39 by mmanyani         ###   ########.fr       */
+/*   Updated: 2024/12/07 23:45:38 by mmanyani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,7 +127,8 @@ int main()
 	printf("%d\n", n);
 	int m = ft_printf("%x\n", -1);
 	ft_printf("%d\n", m);
-	*/				//how hh
+	*/					//how hh
+	
 
 	/*
 	close(1);
@@ -188,4 +189,26 @@ int main()
         int n = ft_printf("%d %q %T %p ", -2147, 'c', c, c);
         ft_printf("%d\n", n);
 	*/
+
+	/*
+	printf("%d\n", printf("%s\n", "tst"));
+	ft_printf("%d\n", ft_printf("%s\n", "tst"));
+	*/
+
+	//printf("%d\n", printf("%x\n", -2));
+	//ft_printf("%d\n", ft_printf("%x\n", -2));
+	/*
+    	printf("%d\n", printf("%x\n", -10));      // Output: fffffff6
+    	ft_printf("%d\n", ft_printf("%x\n", -10));      // Output: fffffff6
+    	printf("%d\n", printf("%x\n", -2147483648)); // Output: 80000000
+    	ft_printf("%d\n", ft_printf("%x\n", -2147483648)); // Output: 80000000
+	*/
+
+	/*
+	printf("%s\n", NULL);
+	ft_printf("%s\n", NULL);	
+	*/
+
+	printf("%%%s\n", "tst");
+	ft_printf("%%%s\n", "tst");
 }
