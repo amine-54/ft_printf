@@ -6,7 +6,7 @@
 /*   By: mmanyani <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/30 09:42:29 by mmanyani          #+#    #+#             */
-/*   Updated: 2024/12/06 14:58:41 by mmanyani         ###   ########.fr       */
+/*   Updated: 2024/12/08 13:41:26 by mmanyani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,6 @@ int	ft_printf(const char *format, ...)
 		va_end(args);
 		return (-1);
 	}
+	va_end(args);
 	return (total);
 }
