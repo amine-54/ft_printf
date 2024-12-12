@@ -6,7 +6,7 @@
 /*   By: mmanyani <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/30 13:33:28 by mmanyani          #+#    #+#             */
-/*   Updated: 2024/12/08 15:50:50 by mmanyani         ###   ########.fr       */
+/*   Updated: 2024/12/12 17:56:04 by mmanyani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,8 @@ int	print_string(char *s)
 		s = "(null)";
 	while (*s)
 	{
-		temp = print_string(*s);
-		if (temp == -1)
+		if (error_check(&count, print_char(*s)) == -1)
 			return (-1);
-		else
-			count += temp;
 		s++;
 	}
 	return (count); //khasek tgad problem dyal sum of -1 f ga3 lfuncs
