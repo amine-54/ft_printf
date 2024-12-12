@@ -6,7 +6,7 @@
 /*   By: mmanyani <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/30 14:31:47 by mmanyani          #+#    #+#             */
-/*   Updated: 2024/12/08 13:17:10 by mmanyani         ###   ########.fr       */
+/*   Updated: 2024/12/12 17:57:50 by mmanyani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,6 @@ int	print_string(char *s);
 int	print_unsigned(unsigned int n);
 int	print_hex(unsigned int n, char c);
 int	format_choice(int *total, va_list args, const char form);
+int     error_check(int *count, int result);
 
 #endif

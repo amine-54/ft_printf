@@ -1,7 +1,7 @@
 NAME = libftprintf.a
 
 SRC = ft_printf.c ft_putnbr.c print_char.c print_hex.c print_memory.c \
-      print_string.c print_unsigned.c formats.c
+      print_string.c print_unsigned.c formats.c error_check.c
 
 OBJ = ${SRC:.c=.o}
 

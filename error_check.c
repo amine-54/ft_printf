@@ -1,29 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_string.c                                     :+:      :+:    :+:   */
+/*   error_check.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmanyani <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/30 13:33:28 by mmanyani          #+#    #+#             */
-/*   Updated: 2024/12/12 18:01:30 by mmanyani         ###   ########.fr       */
+/*   Created: 2024/12/12 17:48:57 by mmanyani          #+#    #+#             */
+/*   Updated: 2024/12/12 17:58:44 by mmanyani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	print_string(char *s)
+int	error_check(int *count, int result)
 {
-	int	count;
-
-	count = 0;
-	if (s == NULL)
-		s = "(null)";
-	while (*s)
-	{
-		if (error_check(&count, print_char(*s)) == -1)
-			return (-1);
-		s++;
-	}
-	return (count); //khasek tgad problem dyal sum of -1 f ga3 lfuncs
+	if (result == -1)
+		return (-1);
+	else
+		*count += result;
+	return (0);
 }
