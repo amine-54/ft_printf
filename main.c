@@ -20,11 +20,23 @@ int main()
 	printf("%d\n", m);
 	//fprintf(stderr, "%d %d", n, m);
 	*/
-
-	//close(1);
-	unsigned int m = ft_printf("%x\n", 2566601);
+	
+	/*	
+	char *s = "tstalah";
+	close(1);
+	int m = ft_printf("%d\n", -1250);
 	ft_printf("%d\n", m);
-	unsigned int n = printf("%x\n", 2566601);
+	int n = printf("%d\n", -1250);
 	printf("%d\n", n);
-	//fprintf(stderr, "%d %d", m, n);
+	fprintf(stderr, "%d %d", m, n);
+	*/
+
+	close(1);
+	int m = ft_printf("%T_tst\n");
+	//ft_printf("%d\n", m);
+	int n = printf("%T_tst\n");
+	//printf("%d\n", n);
+	fprintf(stderr, "%d %d", m, n);
+	
+	
 }

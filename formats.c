@@ -6,7 +6,7 @@
 /*   By: mmanyani <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 13:12:55 by mmanyani          #+#    #+#             */
-/*   Updated: 2024/12/07 23:25:59 by mmanyani         ###   ########.fr       */
+/*   Updated: 2024/12/12 21:53:38 by mmanyani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,13 @@ static int	format_handle(va_list args, const char form)
 	else if (form == '%')
 		return (print_char(form));
 	else
-		return (print_char('%') + print_char(form));
+	{
+    		int n = print_char('%') + print_char(form);
+    		fprintf(stderr, "n: %d\n", n);  // Debugging line to check the value of n
+    		return(n);
+
+		//return (print_char('%') + print_char(form));
+	}
 }
 
 int	format_choice(int *total, va_list args, const char form)
