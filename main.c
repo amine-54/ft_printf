@@ -2,12 +2,19 @@
 
 int main()
 {
+
 	/*
 	close(1);
 	fflush(stdout);
-	fprintf(stderr, "%d ", printf("%s", "tst"));
-	fprintf(stderr, "%d ", ft_printf("%s", "tst"));
+	fprintf(stderr, "%d ", printf("%d", 1250));
+	fprintf(stderr, "%d ", ft_printf("%d", 1250));
 	*/
+        
+        close(1);
+        fprintf(stderr, "%d ", ft_printf("%s", "tst"));
+        fprintf(stderr, "%d ", printf("%s", "tst"));
+        
+
 
 
 	/*
@@ -31,12 +38,14 @@ int main()
 	fprintf(stderr, "%d %d", m, n);
 	*/
 
+	/*
 	close(1);
-	int m = ft_printf("%T_tst\n");
-	//ft_printf("%d\n", m);
-	int n = printf("%T_tst\n");
-	//printf("%d\n", n);
-	fprintf(stderr, "%d %d", m, n);
-	
-	
+	fprintf(stderr, "%d ", ft_printf("%T_tst"));
+	fprintf(stderr, "%d ", printf("%T_tst"));
+	*/
+
+
+
+
 }
+

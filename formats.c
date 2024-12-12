@@ -6,7 +6,7 @@
 /*   By: mmanyani <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 13:12:55 by mmanyani          #+#    #+#             */
-/*   Updated: 2024/12/12 21:53:38 by mmanyani         ###   ########.fr       */
+/*   Updated: 2024/12/12 22:58:34 by mmanyani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,11 @@ static int	format_handle(va_list args, const char form)
 		return (print_char(form));
 	else
 	{
-    		int n = print_char('%') + print_char(form);
-    		fprintf(stderr, "n: %d\n", n);  // Debugging line to check the value of n
-    		return(n);
+    		//int n = print_char('%') + print_char(form);
+    		//fprintf(stderr, "n: %d\n", n);  // Debugging line to check the value of n
+    		//return(n);
 
-		//return (print_char('%') + print_char(form));
+		return (print_char('%') + print_char(form));
 	}
 }
 
