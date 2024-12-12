@@ -21,10 +21,10 @@ int main()
 	//fprintf(stderr, "%d %d", n, m);
 	*/
 
-	close(1);
-	unsigned int m = ft_printf("%x\n", 950);
+	//close(1);
+	unsigned int m = ft_printf("%x\n", 2566601);
 	ft_printf("%d\n", m);
-	unsigned int n = printf("%x\n", 950);
+	unsigned int n = printf("%x\n", 2566601);
 	printf("%d\n", n);
-	fprintf(stderr, "%d %d", m, n);
+	//fprintf(stderr, "%d %d", m, n);
 }
